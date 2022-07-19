@@ -12,20 +12,20 @@ void swap(listint_t **head, listint_t *node1, listint_t *node2);
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *forward, *tmp;
+	listint_t *f, *tmp;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	for (forward = (*list)->next; forward && forward->prev; forward = forward->next)
+	for (f = (*list)->next; f && f->prev; f = f->next)
 	{
-		for (; forward && forward->prev && forward->n < forward->prev->n;
-		     forward = forward->prev)
+		for (; f && f->prev && f->n < f->prev->n;
+		     f = f->prev)
 		{
-			tmp = forward->prev;
-			swap(list, tmp, forward);
+			tmp = f->prev;
+			swap(list, tmp, f);
 			print_list(*list);
-			forward = forward->next;
+			f = f->next;
 		}
 	}
 }
