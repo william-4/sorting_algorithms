@@ -1,1 +1,1 @@
-# sorting_algorithms
+# Currently learning about time complexity of algorithms as well as sorting algorithms in C Programming Language
